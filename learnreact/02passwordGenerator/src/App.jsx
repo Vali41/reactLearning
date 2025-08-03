@@ -96,6 +96,7 @@ function App() {
           </div>
         </div>
         <div className='absolute bottom-0 left-0 w-full text-center text-white p-4'>
+          <h1 className='text-lg'>Made with ❤️ by You</h1>
           <textarea className='w-full h-40 bg-gray-700 m-2 p-2 rounded-lg'>
             </textarea>
           </div>
