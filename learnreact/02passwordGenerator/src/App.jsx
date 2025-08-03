@@ -46,10 +46,10 @@ function App() {
 
   return (
     <>
-      <div className='w-screen h-screen bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center'>
-        <div className='w-max  flex flex-col items-center justify-center  rounded-lg shadow-lg bg-gray-800 p-8 md:full h-max mb-4 relative'>
+      <div className='w-screen h-screen bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center main-container'>
+        <div className='w-max  flex flex-col items-center justify-center  rounded-lg shadow-lg bg-gray-800 p-4 password-container'>
           <h1 className='text-4xl text-center text-white'>Password Generator</h1>
-          <div className='mt-8 w-full flex items-center'>
+          <div className='mt-8 w-full flex items-center '>
             <input 
             type='text'
              className='w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 outline ' 
@@ -63,8 +63,8 @@ function App() {
                {copied ? 'Copied!' : 'Copy Password'}
             </button>
           </div>
-          <div className='w-full flex md:flex-row flex-col md:p-4 mt-4 items-center justify-between'>
-            <div className='w-full  flex  items-center justify-between '>
+          <div className='w-full flex md:flex-row flex-col md:p-4 mt-4 items-center justify-between '>
+            <div className='w-full  flex  items-center justify-between length-container '>
               <input
               type='range'
               id='range' 
@@ -74,18 +74,19 @@ function App() {
               min={8}
               max={30}
               />
-              <label htmlFor="range" className='text-grey-800 m-2 px-2 bg-white border rounded-lg p-3'>{length}</label>
+              <label htmlFor="range" className='text-grey-800 m-2 px-2 bg-white border rounded-lg p-3 '>{length}</label>
             </div>
-            <div className={`{'w-full  m-2 p-2 flex grow-1 items-center justify-center   rounded-lg
+            <div className={`{'w-full  m-2 p-2 flex  items-center justify-center   rounded-lg number-container
                ${btnColorChar}}'`}>
               <input
               type='checkbox'
               id='charAllowed'
+              className='cursor-pointer'
               onClick={()=>{setCharAllowed((prev)=>!prev);setCopied(false)}}
               />
               <label htmlFor="charAllowed" className='w-full text-white m-2  px-1'>Character Allowed</label>
             </div>
-            <div className={`w-full m-4 flex grow-0 items-center justify-center  rounded  md:p-4 md:m-4     ${btnColorNumber}`}>
+            <div className={`w-full m-2 p-2 flex  items-center justify-center  rounded  number-container  ${btnColorNumber}`}>
               <input
               type='checkbox'
               id='numberAllowed'
@@ -95,7 +96,7 @@ function App() {
             </div>
           </div>
         </div>
-        <div className='absolute bottom-0 left-0 w-full text-center text-white p-4 md:hidden'>
+        <div className='absolute bottom-0 left-0 w-full text-center text-white p-4 paste-container '>
           
           <textarea className='w-full h-40 bg-gray-700 m-2 p-2 rounded-lg'>
             </textarea>

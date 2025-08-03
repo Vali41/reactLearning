@@ -1,0 +1,32 @@
+@media screen and (max-width: 640px) {
+	.main-container{
+		flex-direction: column;
+		justify-content: space-around;
+		height: 100vh;
+		flex-wrap: wrap;
+	
+	}
+  .password-container {
+	width: 90%;
+	height: 70%;
+	border: 1px solid #ccc;
+	
+
+  }
+  .length-container {
+	justify-content: center;
+
+  }
+  .number-container{
+	width: 80%;
+	border: 1px solid #ccc;
+	border-radius: 12px;
+	padding-left: 12px;
+;
+
+  }
+  .paste-container{
+	display: none;
+	
+  }
+}
