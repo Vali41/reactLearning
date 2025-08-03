@@ -47,7 +47,7 @@ function App() {
   return (
     <>
       <div className='w-screen h-screen bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center'>
-        <div className='w-max flex flex-col items-center justify-center  rounded-lg shadow-lg bg-gray-800 p-8  '>
+        <div className='w-max   flex flex-col items-center justify-center  rounded-lg shadow-lg bg-gray-800 p-8 md:p-12 relative'>
           <h1 className='text-4xl text-center text-white'>Password Generator</h1>
           <div className='mt-8 w-full flex items-center'>
             <input 
@@ -63,8 +63,8 @@ function App() {
                {copied ? 'Copied!' : 'Copy Password'}
             </button>
           </div>
-          <div className='w-full flex  mt-4 '>
-            <div className='w-full flex items-center justify-between '>
+          <div className='w-full flex md:flex-row flex-col md:p-4 mt-4 items-center justify-between'>
+            <div className='w-full  flex  items-center justify-between '>
               <input
               type='range'
               id='range' 
@@ -85,7 +85,7 @@ function App() {
               />
               <label htmlFor="charAllowed" className='w-full text-white m-2  px-1'>Character Allowed</label>
             </div>
-            <div className={`w-full m-4 flex grow-0 items-center justify-center  rounded       ${btnColorNumber}`}>
+            <div className={`w-full m-4 flex grow-0 items-center justify-center  rounded  md:p-4 md:m-4     ${btnColorNumber}`}>
               <input
               type='checkbox'
               id='numberAllowed'
