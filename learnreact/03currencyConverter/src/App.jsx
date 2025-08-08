@@ -27,13 +27,13 @@ function App() {
   
   
   const convert = () => {
-    setConvertedAmount(currencyInfo[to]*amount)
+    setConvertedAmount(Math.round((currencyInfo[to]*amount) * 100) / 100)
   }
 
   let date = new Date().toLocaleDateString()
   return (
     <div
-        className="w-full h-screen flex flex-wrap justify-center items-center bg-brown-800 bg-no-repeat"
+        className="w-full h-screen flex flex-wrap justify-center items-center bg-gradient-to-t from-indigo-400 via-purple-600 to-pink-800"
         
     >
         <div className='bg-white w-min h-min flex flex-col justify-between rounded-xl shadow-xl  '>
@@ -41,10 +41,10 @@ function App() {
                 <h1 className='text-3xl text-center font-bold text-red-800 p-4'><span className='text-green-800'>{date}</span>:USD Exchange Rate
                 </h1>
             </div>
-            <div className='flex flex-col sm:flex-row'>
-            <p className='rounded-xl m-2 border p-2 bg-gray-800 text-white hover:bg-blue-600 '>Euro : <span className='font-bold text-#11fb8d  p-2 '>{usCurrencyInfo["eur"]}</span></p>
-            <p className='rounded-xl m-2 border p-2 bg-gray-800 text-white hover:bg-blue-600'>Russia: <span className='font-bold text-#11fb8d  p-2 '>{usCurrencyInfo["rub"]}</span></p>
-            <p className='rounded-xl m-2 border p-2 bg-gray-800 text-white hover:bg-blue-600'>India: <span className='font-bold text-#11fb8d  p-2 '>{usCurrencyInfo["inr"]}</span></p>
+            <div className='flex flex-col  sm:flex-row'>
+            <h2 className='rounded-xl m-2 border-2 border-indigo-600 p-4  bg-#12356 text-black font-bold shadow-lg hover:bg-sky-800 hover:text-white'>Euro : <p className='font-bold text-#11fb8d  p-2 text-center '>{Math.round(usCurrencyInfo["eur"] * 100) / 100}</p></h2>
+            <h2 className='rounded-xl m-2 border-2 border-indigo-600 p-4  bg-#12356 text-black font-bold shadow-lg hover:bg-sky-800 hover:text-white'>Russia: <p className='font-bold text-#11fb8d  p-2 text-center '>{Math.round(usCurrencyInfo["rub"] * 100) / 100}</p></h2>
+            <h2 className='rounded-xl m-2 border-2 border-indigo-600 p-4  bg-#12356 text-black font-bold shadow-lg hover:bg-sky-800 hover:text-white'>India: <p className='font-bold text-#11fb8d  p-2 text-center '>{Math.round(usCurrencyInfo["inr"] * 100) / 100}</p></h2>
             </div>
         </div>
         <div className="w-full">
